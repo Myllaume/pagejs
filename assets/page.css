@@ -1,0 +1,102 @@
+:root {
+    --myred: #d44d3b;
+}
+
+body {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.4em;
+
+    counter-reset: hFirst;
+    /* counter-reset: hSecond;
+    counter-reset: hThird; */
+}
+
+@page {
+    size: A4;
+    margin: 10mm 15mm 10mm 30mm;
+
+    @bottom-right {
+        content: counter(page)'/'counter(pages);
+        font-family: 'Inconsolata', monospace;
+        font-size: 0.8rem;
+    }
+}
+
+h1, h2, h3 {
+    font-family: 'Inconsolata', monospace;
+}
+
+h1.page-title {
+    font-size: 4.2em;
+    color: var(--myred);
+}
+
+h2.page-sub-title {
+    font-size: 1rem;
+    margin: unset;
+    font-weight: 200;
+}
+
+h1:not(.out-context h1) {
+    counter-increment: hFirst;
+    counter-reset: hSecond;
+}
+h1:not(.out-context h1)::before {
+    content: counter(hFirst);
+    position: absolute;
+    left: -80px;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+h2:not(.out-context h2) {
+    counter-increment: hSecond;
+    counter-reset: hThird;
+}
+h2:not(.out-context h2)::before {
+    content: counter(hFirst)'.'counter(hSecond);
+    position: absolute;
+    left: -80px;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+h3:not(.out-context h3) {
+    counter-increment: hThird;
+}
+h3:not(.out-context h3)::before {
+    content: counter(hFirst)'.'counter(hSecond)'.'counter(hThird);
+    position: absolute;
+    left: -80px;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+p {
+    line-height: 120%;
+}
+
+pre code {
+    font-family: 'Inconsolata', monospace;
+    margin: 50px 0;
+    font-size: 1.2rem;
+    line-height: 150%;
+}
+
+a {
+    color: var(--myred);
+    text-transform: none;
+}
+a::after {
+    content: " (" attr(href) ")";
+}
+
+blockquote{
+    border-left:5px solid lightgrey;
+    margin:0;
+    padding-left:1rem;
+}
+
+.cover {
+    break-after: page;
+}

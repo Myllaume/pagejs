@@ -1,0 +1,28 @@
+doctype html
+
+html(lang='fr')
+    head
+        meta(charset='utf-8')
+
+        title #{title}
+
+        style
+            include assets/page.css
+            include assets/code.css
+
+        script
+            include libs/page.js
+            include libs/highlight.js
+        
+    body
+        div(class='cover out-context')
+
+            span(class='author') Guillaume Brioudes
+            h1(class='page-title') #{title}
+            if subTitle
+                h2(class='page-sub-title') #{subTitle}
+
+        div !{content}
+
+        script
+            include assets/code.js

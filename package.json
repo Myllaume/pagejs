@@ -1,0 +1,18 @@
+{
+  "name": "myllaume-pahe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Guillaume Brioudes <https://myllaume.fr/>",
+  "license": "ISC",
+  "dependencies": {
+    "js-yaml": "^3.14.0",
+    "marked": "^2.0.0",
+    "node-static": "^0.7.11",
+    "pug": "^3.0.0",
+    "yaml-front-matter": "^4.1.1"
+  }
+}
