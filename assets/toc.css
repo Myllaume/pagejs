@@ -1,19 +1,31 @@
+#toc::before {
+    content: "Table des matières";
+    font-family: 'Inconsolata', monospace;
+    display: block;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 2em;
+}
+
 #toc ul {
     list-style: none;
     padding: unset;
     margin: unset;
 }
 
-#toc li a::after{
-	content: target-counter(attr(href), page);
+#toc li a::after {
+    content: target-counter(attr(href), page);
     float: right;
+}
+
+#toc li {
+    line-height: 180%;
 }
 
 #toc a {
     font-family: 'Inconsolata', monospace;
     color: inherit;
     text-transform: none;
-    line-height: 150%;
 }
 
 #toc .toc-element-level-1 {
@@ -27,14 +39,10 @@
 
 #toc .toc-element-level-2 {
     text-indent: 50px;
-    font-size: 0.8em;
-}
-
-#toc .toc-element-level-2+.toc-element-level-2 {
-    margin-bottom: 5px;
+    font-size: 1em;
 }
 
 #toc .toc-element-level-3 {
     text-indent: 100px;
-    font-size: 0.6em;
+    font-size: 0.8em;
 }
