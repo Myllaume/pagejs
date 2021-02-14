@@ -13,7 +13,8 @@ file = yamlFrontmatter.loadFront(file);
 const page = {
     title: file.title,
     subTitle: false,
-    content: md(file.__content)
+    content: md(file.__content),
+    config: config
 }
 delete file;
 

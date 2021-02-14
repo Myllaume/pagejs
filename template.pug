@@ -10,19 +10,28 @@ html(lang='fr')
             include assets/page.css
             include assets/code.css
 
+            if config.toc
+                include assets/toc.css
+
         script
             include libs/page.js
             include libs/highlight.js
         
     body
-        div(class='cover out-context')
+        div(id='cover',class='out-context')
 
             span(class='author') Guillaume Brioudes
             h1(class='page-title') #{title}
             if subTitle
                 h2(class='page-sub-title') #{subTitle}
 
-        div !{content}
+        if config.toc
+            nav#toc
+
+        div#content !{content}
 
         script
             include assets/code.js
+
+            if config.toc
+                include assets/toc.js

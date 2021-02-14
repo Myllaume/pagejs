@@ -83,11 +83,11 @@ pre code {
     line-height: 150%;
 }
 
-a {
+a:not(#toc a) {
     color: var(--myred);
     text-transform: none;
 }
-a::after {
+a:not(#toc a)::after {
     content: " (" attr(href) ")";
 }
 
@@ -97,6 +97,6 @@ blockquote{
     padding-left:1rem;
 }
 
-.cover {
+#cover, #toc {
     break-after: page;
 }
